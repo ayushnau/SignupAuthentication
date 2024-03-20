@@ -1,15 +1,18 @@
+import "./App.css";
+import { SignupFormDemo } from "./components/SignupFormDemo";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import './App.css'
-import { SignupFormDemo } from "./components/ui/SignupFormDemo";
-import { VedioApp} from "./VedioApp"
+import { LoginForm } from "./components/LoginForm";
+
 function App() {
   return (
-  <div>
-  <SignupFormDemo>
-    <VedioApp></VedioApp>
-  </SignupFormDemo>
-  </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SignupFormDemo />} />
+        <Route path="/login" element={<LoginForm />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
-export default App
+export default App;
